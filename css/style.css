@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Quicksand:wght@300..700&family=Roboto:ital@0;1&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+    font-family: "Quicksand", "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+}
+
+:root {
+    --base-color: #0bceaf;
+    --accent-color: #5405C7;
+    --bright-color: #ffc700;
+    --light-color: #f3f3f3;
+    --sans-serif: "Poppins", Arial, Helvetica, sans-serif;
+    --nav-height: 80px;
+    --nav-gap: 15px;
+}
+
+.color1 {
+    background-color: #3AEDC2;
+}
+
+.color2 {
+    background-color: blueviolet;
+}
+
+.color3 {
+    background-color: bisque;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-color);
+}
+
+h1 {
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-size: 2.5em;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+h2 {
+    font-family: var(--sans-serif);
+    /*font-size: 1.5em;*/
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+h3 { /* All h3 are the same */
+    font-family: var(--sans-serif);
+    font-size: 1em;
+    font-weight: 600;
+}
+h4 {
+    font-family: var(--sans-serif);
+    font-size: 0.875em;
+    font-style: italic;
+}
+.fn-accent { /* Use in special occasions */
+    font-family: "Pacifico", cursive;
+    font-weight: normal;
+}
+.text-justify { /* Was removed from bootstrap... */
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/*
+    Buttons
+*/
+.btn-cv { /* Download CV */
+    background-color: var(--bright-color);
+    font-family: var(--sans-serif);
+    font-weight: 700;
+}
+.btn-cv:hover {
+    background-color: #ffd84a;
+}
+
+.btn:not(.btn-cv) { /* Any buttons */
+    background-color: #5405C7;
+    font-family: var(--sans-serif);
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+}
+.btn:not(.btn-cv):hover {
+    background-color: #7e28ff;
+}
+
+
+/*
+    Navbar, mobile only
+*/
+.navbar {
+    /*height: var(--nav-height);*/
+    background-color: rgba(243, 243, 243, 0.9);
+    z-index: 10;
+}
+.navbar .offcanvas {
+    background-color: var(--light-color);
+}
+
+.navbar-brand .bi-circle-fill { /* Circle icon Tamara Plante */
+    font-size: 22px;
+    vertical-align: 5px;
+    color: var(--bright-color);
+}
+.navbar-brand span { /* Tamara Plante */
+    font-size: 32px;
+}
+
+.navbar-nav li:not(:last-child) a,
+.nav-link.btn-portfolio {
+    font-family: var(--sans-serif);
+    font-size: 2em;
+    line-height: 1.8em;
+}
+#main-nav .nav-link:hover,
+#main-nav .nav-link:active,
+.nav-link.active {
+    color: var(--accent-color);
+}
+.anchor {
+    scroll-margin-top: var(--nav-height);
+}
+
+/*
+    Profile card
+*/
+aside {
+    background-color: var(--base-color);
+    z-index: 5;
+}
+aside .fn-accent { /* Tamara */
+    font-size: max(calc(16px + 0.875vw), 16px);
+}
+
+
+
+/*
+    Main
+*/
+.row.resume {
+    position: relative;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--base-color) transparent;
+    /*scroll-behavior: smooth;*/
+    /*scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;*/
+    /*scroll-margin: 80px;*/
+}
+/*main.resume {
+    position: relative;
+}*/
+section.resume {
+    padding: 20px 0;
+}
+section.resume .content{
+    margin: auto;
+}
+
+#section-about-me {
+    background-color: whitesmoke;
+}
+#section-about-me .fn-accent + h2{
+    font-size: min(calc(18px + 1vw), 28px);
+}
+
+
+#section-projects {
+    display: none;
+    color: white;
+}
+#section-projects h2,
+#section-projects hr {
+    color: white;
+}
+#section-projects.active {
+    /*position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;*/
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: var(--nav-height) 0;
+    
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--accent-color) transparent;
+    scrollbar-width: thin;
+
+    transition: transform 0.5s ease;
+    transform: translate(-100%, 0);
+
+    background-color: #211951;
+    /*z-index: 15;*/
+}
+#section-projects.active {
+    transition: transform 0.5s ease;
+    transform: translate(0, 0);
+    background-color: #211951;
+}
+#section-projects .card {
+    border: 1px solid var(--accent-color)
+}
+#section-projects .card-title {
+    color: #3AEDC2;/* #78ff9a;*/
+}
+#section-projects .card-link {
+    font-size: 1.5rem;
+    color: #ffd84a; /* #c1ffea;*/
+    margin-right: 10px;
+}
+#section-projects .badge {
+    font-weight: normal;
+    color: white;
+    background-color: #7e28ff !important;
+}
+
+
+#languages img {
+    width: 35px;
+    height: 35px;
+}
+
+#interests figure {
+    margin-right: 10px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+#interests figure img {
+    width: 45px;
+    height: 45px;
+}
+
+.button-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    color:#211951;
+    font-size: 24px;
+}
+.button-icon:hover {
+    color:#5405C7;
+}
+
+
+.badge-group {
+    opacity: 0;
+    filter: blur(5px);
+    /*transition: all 1s;*/
+    /*transform: translateX(-100%);*/
+}
+.badge-group.show {
+    /*opacity: 1;*/
+    filter: blur(0);
+    /*transform: translateX(0);*/
+    animation: slide 0.5s ease forwards;
+}
+.badge-group:nth-child(1) {
+    animation-delay: 200ms;
+}
+.badge-group:nth-child(2) {
+    animation-delay: 400ms;
+}
+.badge-group:nth-child(3) {
+    animation-delay: 600ms;
+}
+.badge-group:nth-child(4) {
+    animation-delay: 800ms;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0.1;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.big-badge {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid rgba(143, 143, 143, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 2px rgba(180, 180, 180, 0.3);
+    margin: 0 10px 10px 0;
+}
+.big-badge .logo {
+    display: flex;
+    margin-right: 6px;
+}
+.big-badge img {
+    width: 30px;
+    height: 30px;
+}
+.big-badge .label {
+    font-size: 1rem;
+}
+.badge {
+    font-size: 0.8rem;
+    margin: 0 5px 5px 0;
+}
+
+
+.bg-image { /* Colorful keyboard*/
+    position: fixed;
+    height: 50vh;
+    width: 100vw;
+    right: 0;
+    bottom: 0;
+    opacity: 80%;
+    background-image: url("../images/bg-image.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+}
+
+
+.footer {
+    background-color: var(--base-color);
+}
+
+.hide {
+    display: none;
+}
+
+
+@media(prefers-reduced-motion) {
+    .badge-group {
+        transition: none;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .hide {
+        display: block;
+    }
+    
+    main.resume {
+        position: relative;
+        height: 100%;
+        /*
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scrollbar-color: var(--base-color) transparent;
+        scrollbar-width: thin;*/
+    }
+
+    section.resume {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0;
+        /*
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        scrollbar-color: var(--base-color) transparent;
+        scrollbar-width: thin;*/
+
+        transition: transform 0.5s ease;
+        transform: translate(-100%, 0);
+    }
+    section.resume.active {
+        transition: transform 0.5s ease;
+        transform: translate(0, 0);
+    }
+
+
+    #section-about-me {
+        background-color: unset;
+    }
+    #section-about-me .fn-accent {
+        font-size: min(calc(16px + 3vw), 64px);
+        color: #211951;
+        font-weight: 400;
+        margin-left: -5px;
+    }
+    #section-about-me .fn-accent + h2{
+        font-size: min(calc(16px + 1vw), 28px);
+    }
+    
+    #section-projects {
+        display: unset;
+    }
+
+    #interests figure img {
+        width: 50px;
+        height: 50px;
+    }
+}

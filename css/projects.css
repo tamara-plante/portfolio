@@ -1,0 +1,145 @@
+.projects-container {
+    --nav-gap: 15px;
+    --nav-height: 100px;
+    position: relative;
+    top:0;
+    left:0;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    background-color: #161616;
+}
+.projects-container .close {
+    position: fixed;
+    top: var(--nav-gap);
+    left: var(--nav-gap);
+    color: var(--accent-color);
+    transform: translateX(10%);
+}
+
+.hide {
+    display: none;
+}
+
+.close .fn-accent {
+    font-size: 1.5rem;
+}
+
+.close .pbtn-close {
+    font-size: 2.5rem;
+}
+.close .pbtn-close:hover {
+    animation: bounce 0.5s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateX(-10%)
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+}
+
+.pnav {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: var(--nav-gap);
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+.pnav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--nav-gap);
+}
+
+.pnav-link {
+    margin-right: var(--nav-gap);
+    width: 15px;
+    height: 15px;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    transition: transform 0.1s;
+}
+.pnav-link:hover {
+    transform: scale(1.4);
+}
+.pnav-link.active {
+    transform: scale(1.4);
+    background-color: var(--accent-color);
+}
+
+.pnav-link:hover ~ .pnav-label {
+    opacity: 1;
+}
+
+.pnav-label {
+    font-weight: bold;
+    /*color: black;*/
+    color: violet;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+
+
+@media (max-width: 768px) {
+    .projects-container {
+        scroll-snap-type: x mandatory;
+    }
+
+    .projects {
+        flex-direction: row;
+    }
+
+    .projects section {
+        flex-shrink: 0;
+        width: 100vw;
+        height: 100%;
+    }
+
+    .projects .content {
+        margin-top: var(--nav-height);
+    }
+
+    .pnav {
+        position: fixed;
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        bottom: 20px;
+        left: 50%;
+        top: unset;
+        transform: translateX(-50%);
+    }
+
+    .pnav-item {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: end;
+        margin-top: var(--nav-gap);
+        text-align: center;
+    }
+
+    .pnav-link {
+        margin: 0 20px;
+        /*margin-bottom: var(--nav-gap);*/
+    }
+    
+    .pnav-label {
+        display:none;
+        color: red;
+    }
+}
