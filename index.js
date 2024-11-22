@@ -59,8 +59,8 @@ function init() {
                 case "section-projects":
                     //sectionProjects.style.display = "block";
                     sectionProjects.classList.add("active");
-                    sectionSkills.classList.add("hide");
-                    sectionAboutMe.classList.add("hide");
+                    /*sectionSkills.classList.add("hide");
+                    sectionAboutMe.classList.add("hide");*/
                     active = "section-projects";
                     break;
                 default:
