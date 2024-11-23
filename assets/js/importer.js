@@ -77,7 +77,8 @@ function importProjects(jsonData)
 
                 img.src = `assets/images/portfolio/${el.img}`;
                 img.alt = el.label;
-                classes(img, "portfolio-img text-bg-light card-img-top img-fluid rounded-top");
+                classes(img, "portfolio-img card-img-top img-fluid rounded-top");
+                classes(img, (el.imgClass ? el.imgClass : "text-bg-light"));
 
             }
             const main = cardBody();

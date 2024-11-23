@@ -140,6 +140,7 @@
             "type": "project",
             "label": "FourCasters | Weather & Misc App",
             "img": "logo-fourcasters.png",
+            "imgClass": "px-5 pt-2",
             "desc": [
                 {
                     "text": "FourCasters is a Java-based project to focus on implementing a RESTful API to provide information to the Front-end as well as gather information through external API for the weather, events, tarot reading, fortune telling and historical facts."
