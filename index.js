@@ -30,33 +30,16 @@ function init()
         msnry.layout();
     });*/
 
-    // Setup display none on end of transitions
-
-
-
     const badgeGroups = document.querySelectorAll(".badge-group");
     const observer = new IntersectionObserver(entries => {
-        /*console.log(entries);*/
+        
         const focused = entries.filter(entry => entry.isIntersecting);
-
         focused.forEach(entry => {
             entry.target.classList.add("show");
         })
-        /*
-        console.log(focused);
-        if (focused[0]) {
-            focused[0].target.classList.add("show");
-        }*/
-    });
-    badgeGroups.forEach(group => observer.observe(group));
 
-    /*
-    document.querySelectorAll(".btn-portfolio").forEach(el => {
-        el.addEventListener("click", () => {
-            console.log("hello?");
-            document.getElementById("projects-container").classList.remove("hide");
-        })
-    });*/
+    }, { threshold: 0.5 });
+    badgeGroups.forEach(group => observer.observe(group));
 
     // Setup offcanvas links
     // For some reason, through data-bs-dismiss, anchor links scroll does not work.
@@ -72,9 +55,6 @@ function init()
         }
 
         el.addEventListener("click", () => {
-            /*if (active == "section-projects") {
-                sectionProjects.style.display = "none";
-            }*/
             contentHandler(el.dataset.section);
         });
     });
