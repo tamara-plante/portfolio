@@ -1,9 +1,16 @@
-const sectionAboutMe = document.getElementById("section-about-me");
-const sectionProjects = document.getElementById("section-projects");
-const sectionSkills = document.getElementById("section-skills");
+let sectionAboutMe;
+let sectionProjects;
+let sectionSkills;
 let active = "section-about-me";
 
-function init() {
+window.onload = init;
+
+function init() 
+{
+    sectionAboutMe = document.getElementById("section-about-me");
+    sectionProjects = document.getElementById("section-projects");
+    sectionSkills = document.getElementById("section-skills");
+
 
     // init Masonry
     Promise.all(Array.from(document.images)
@@ -123,5 +130,3 @@ function generateNavigation() {
 }
 
 //generateNavigation();
-
-init();
