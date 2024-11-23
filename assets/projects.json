@@ -1,0 +1,241 @@
+{
+    "projects": [
+        {
+            "type": "project",
+            "label": "Ticksy | Time-tracking Application",
+            "img": "ticksy-cover.PNG",
+            "desc": [
+                {
+                    "info": "[Upcoming Project]"
+                },
+                {
+                    "text": "Ticksy is an application to help manage productivity for projects."
+                }
+            ],
+            "badges": [
+                "C# .NET",
+                "WPF",
+                "Azure"
+            ]
+        },
+        {
+            "type": "project",
+            "label": "Code Bloc | Open-Source issues finder",
+            "img": "code-bloc-cover.png",
+            "desc": [
+                {
+                    "info": "[Upcoming Project]"
+                },
+                {
+                    "text": "Code Bloc is a web application to search open-source projects on GitHub and bookmark them."
+                }
+            ]
+        },
+        {
+            "type": "project",
+            "label": "Etsify | Etsy Clone",
+            "img": "logo-etsify.png",
+            "desc": [
+                {
+                    "text": "This is an Etsy clone React.js and Node.js based project. I was able to further improve my unit testing skills using Jest and SuperTest and as a team, we reached 80% overall coverage. Some features included account creation, SPA item browsing, vendor-seller dynamic, payment using Stripe."
+                },
+                {
+                    "text": "As the team leader, it was important to keep the team focused as we learned many new technologies in the process."
+                }
+            ],
+            "badges": [
+                "ReactJs",
+                "Node.js",
+                "Express.js",
+                "RESTful API",
+                "JWT",
+                "Material UI",
+                "Jest",
+                "RDS",
+                "MySQL",
+                "S3"
+            ],
+            "links": {
+                "demo": "https://etsify.hdcola.org/",
+                "github": [
+                    {
+                        "label": "Github frontend",
+                        "link": "https://github.com/hdcola/etsifyweb"
+                    },
+                    {
+                        "label": "GitHub backend",
+                        "link": "https://github.com/hdcola/etsifyapi"
+                    }
+                ],
+                "presentation": "Etsify-presentation.pdf"
+            }
+        },
+        {
+            "type": "quote",
+            "text": "I gained a lot of unit testing knowledge using Jest and SuperTest."
+        },
+        {
+            "type": "project",
+            "label": "R3ddit | Reddit Clone",
+            "img": "logo-reddit-cover.png",
+            "desc": [
+                {
+                    "text": "This is a Reddit clone Java-based application to replicate the core functionalities of the website. I learned a great deal about JWT, as well as using MapStruct to build proper DTOs in combination with Jakarta for form validations. Some features included account creation, communities, posting, nested comments and voting."
+                },
+                {
+                    "text": "As the team leader, I helped guide our priorities, manage expectations as well as keeping our team organized to meet our deadlines."
+                }
+            ],
+            "badges": [
+                "Java",
+                "SpringBoot",
+                "Spring Security",
+                "JWT",
+                "Spring MVC",
+                "Thymeleaf",
+                "String Data",
+                "RDS",
+                "MySQL",
+                "S3",
+                "JavaScript",
+                "Bootstrap"
+            ],
+            "links": {
+                "presentation": "R3ddit-presentation.pdf"
+            }
+        },
+        {
+            "type": "project",
+            "label": "Task Master | To-do List",
+            "img": "taskmaster-cover.PNG",
+            "desc": [
+                {
+                    "text": "A simple To-do list using PHP with a clean interface. This project helped me better understand sessions and safeguard privacy by only displaying information pertaining to the currently logged user. Using MVC, it provided a structured approach to managing the application state and interactions."
+                }
+            ],
+            "badges": [
+                "php",
+                "MVC",
+                "JavaScript",
+                "Bootstrap",
+                "jQuery",
+                "MySQL",
+                "phpMyAdmin",
+                "Wireframing"
+            ],
+            "links": {
+                "github": [
+                    {
+                        "link": "https://github.com/tamara-plante/taskmaster"
+                    }
+                ],
+                "presentation": "Task-Master-documentation.pdf"
+            }
+        },
+        {
+            "type": "quote",
+            "text": "Implementing JWT in Java was a big task but I gained a lot of experience doing it."
+        },
+        {
+            "type": "project",
+            "label": "FourCasters | Weather & Misc App",
+            "img": "logo-fourcasters.png",
+            "desc": [
+                {
+                    "text": "FourCasters is a Java-based project to focus on implementing a RESTful API to provide information to the Front-end as well as gather information through external API for the weather, events, tarot reading, fortune telling and historical facts."
+                }
+            ],
+            "badges": [
+                "Java",
+                "RESTful WebServices",
+                "JDBC",
+                "H2",
+                "JavaScript",
+                "APIs"
+            ]
+        },
+        {
+            "type": "quote",
+            "text": "I made a tarot card flip animation. It was great to practice CSS3 animations."
+        },
+        {
+            "type": "quote",
+            "text": "Shaders are like magic or something! Accessing individual pixels is pretty cool."
+        },
+        {
+            "type": "project",
+            "label": "Ninja Cat | JavaScript HTML5 Game",
+            "img": "ninja-cat-cover.PNG",
+            "desc": [
+                {
+                    "text": "Ninja Cat is a simple, yet engaging game made with JavaScript. I really got to experience what it could do, using HTML5 Canvas. I learned to write a proper state machine as well as manipulate graphics by creating animations and writing shaders."
+                }
+            ],
+            "badges": [
+                "JavaScript",
+                "HTML5 Canvas",
+                "CSS3"
+            ],
+            "links": {
+                "demo": "https://tamara-plante.github.io/ninja-cat/",
+                "github": [
+                    {
+                        "link": "https://github.com/tamara-plante/ninja-cat"
+                    }
+                ],
+                "presentation": "Ninja-Cat-presentation.pdf"
+            }
+        },
+        {
+            "type": "quote",
+            "text": "SEO can be useful to provide the correct details about a page. There is a huge amount of possible fields."
+        },
+        {
+            "type": "project",
+            "label": "Green Brew Bros | Beer Website",
+            "img": "green-brew-bros-cover.PNG",
+            "desc": [
+                {
+                    "text": "With this fictional brewery website, I learned the steps to design websites. Starting with wireframing, and creating the mockup using Figma and finally realizing the website, which is responsive using Bootstrap 5."
+                }
+            ],
+            "badges": [
+                "HTML5",
+                "Responsive Web Design",
+                "Bootstrap",
+                "CSS3",
+                "Figma",
+                "Wireframing"
+            ],
+            "links": {
+                "demo": "https://tamara-plante.github.io/GreenBrewBros/",
+                "github": [
+                    {
+                        "link": "https://github.com/tamara-plante/GreenBrewBros"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "project",
+            "label": "TIMbooks | Library Management System",
+            "img": "logo-timbooks.png",
+            "desc": [
+                {
+                    "text": "This MySQL project served as a learning point to explore additional database functionalities such as using Procedures, Functions and Views. The purpose was creating a system without a user interface to focus solely on database management with features such as keeping track of books, users and manage late fees."
+                }
+            ],
+            "badges": [
+                "MySQL",
+                "Workbench"
+            ],
+            "links": {
+                "presentation": "TIMbooks-presentation.pdf"
+            }
+        },
+        {
+            "type": "quote",
+            "text": "I'm really enjoying learning MySQL, which has so many functionalities with Functions, Views and Procedures."
+        }
+    ]
+}

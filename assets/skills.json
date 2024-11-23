@@ -1,0 +1,87 @@
+{
+    "frontend": [
+        {
+            "label": "ReactJs",
+            "img": "reactjs-svgrepo-com.svg"
+        },
+        {
+            "label": "JavaScript",
+            "img": "javascript-svgrepo-com.svg"
+        },
+        {
+            "label": "Bootstrap 5 ",
+            "img": "bootstrap-fill-svgrepo-com.svg"
+        },
+        {
+            "label": "Material UI",
+            "img": "material-ui-svgrepo-com.svg"
+        },
+        {
+            "label": "HTML5",
+            "img": "html-5-svgrepo-com.svg"
+        },
+        {
+            "label": "CSS3",
+            "img": "css-svgrepo-com.svg"
+        }
+    ],
+    "backend": [
+        {
+            "label": "Java",
+            "img": "java-svgrepo-com.svg"
+        },
+        {
+            "label": "SpringBoot",
+            "img": "spring-boot-svgrepo-com.svg"
+        },
+        {
+            "label": "Python",
+            "img": "python-svgrepo-com.svg"
+        },
+        {
+            "label": "php",
+            "img": "php-svgrepo-com.svg"
+        },
+        {
+            "label": "Node.js",
+            "img": "node-js-svgrepo-com.svg"
+        },
+        {
+            "label": "Express.js",
+            "img": "express-svgrepo-com.svg"
+        }
+    ],
+    "databases": [
+        {
+            "label": "MySQL",
+            "img": "mysql-svgrepo-com.svg"
+        },
+        {
+            "label": "SQLite",
+            "img": "sqlite-svgrepo-com.svg"
+        },
+        {
+            "label": "MS SQL",
+            "img": "microsoft-sql-server-logo-svgrepo-com.svg"
+        },
+        {
+            "label": "PostgreSQL",
+            "img": "postgresql-svgrepo-com.svg"
+        }
+    ],
+    "others": [
+        "Axios",
+        "Ajax",
+        "phpMyAdmin",
+        "Visual Studio Code",
+        "IntelliJ IDEA",
+        "Eclipse",
+        "Postman",
+        "JUnit",
+        "Jest",
+        "Sequelize",
+        "JPA",
+        "JDBC",
+        "Workbench"
+    ]
+}

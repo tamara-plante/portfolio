@@ -4,7 +4,9 @@ let sectionSkills;
 let panelAside;
 let active = "section-about-me";
 
-let isTriggeredMsnRy = false;
+let gridProjects;
+let gridProjectsSpinner;
+let msnry;
 
 function init() 
 {
@@ -14,11 +16,16 @@ function init()
     panelAside = document.querySelector("aside");
 
     // init Masonry
-    //const grid = document.querySelector('.grid');
-    //msnry = Masonry.data( grid );
-    /*imagesLoaded(grid, function() {
+    gridProjects = document.querySelector("#section-projects .grid");
+    gridProjectsSpinner = document.querySelector("#section-projects .spinner-grow");
+    msnry = new Masonry(gridProjects);
+    /*
+    const grid = document.querySelector('.grid');
+    msnry = Masonry.data( grid );
+    imagesLoaded(grid, function() {
         msnry.layout();
-    });*/
+    });
+    */
     /*
     Promise.all(Array.from(document.images)
     .filter(img => img.classList.contains("portfolio-img") && !img.complete)
@@ -27,6 +34,18 @@ function init()
         var msnry = new Masonry(".grid");
         msnry.layout();
     });*/
+    
+    fetch("assets/skills.json")
+    .then(response => response.json())
+    .then(json => importSkills(json))
+    .catch(error => console.log("Unable to load skills.json\n" + error));
+    
+    
+    fetch("assets/projects.json")
+    .then(response => response.json())
+    .then(json => importProjects(json))
+    .catch(error => console.log("Unable to load projects.json\n" + error));
+    
 
     const badgeGroups = document.querySelectorAll(".badge-group");
     const observer = new IntersectionObserver(entries => {
@@ -58,7 +77,24 @@ function init()
     });
 
     if (["#projects", "#about-me", "#skills"].includes(location.hash)) {
+
+        // Add a delay to allow Masonry the time to load the grid fully.
+        if (location.hash === "#projects") {
+            gridProjects.style.display = "none";
+            
+            setTimeout(function() {
+                gridProjects.style.display = "block";
+                gridProjectsSpinner.style.display = "none";
+                msnry.layout();
+            }, 1000);
+        }
+        else {
+            gridProjectsSpinner.style.display = "none";
+        }
         contentHandler("section-" + location.hash.split("#")[1]);
+    }
+    else {
+        gridProjectsSpinner.style.display = "none";
     }
 }
 
@@ -100,10 +136,11 @@ function contentHandler(section)
     // Portfolio is special
     if (newActive == "section-projects") {
         // Make sure the grid is correctly setup due to display: none.
-        if (!isTriggeredMsnRy) {
-            const msnry = new Masonry(".grid");
-            msnry.layout();
-        }
+        
+        //const msnry = new Masonry(".grid");
+        msnry.layout();
+        //msnry.reloadItems();
+
         sectionSkills.classList.add("hide");
         sectionAboutMe.classList.add("hide");
         panelAside.classList.add("hide");
@@ -111,10 +148,17 @@ function contentHandler(section)
     }
 
     active = newActive;
-    location.hash = "#" + active.split("section-")[1];
+    if (active === "section-about-me") {
+        location.hash = "";
+    }
+    else {
+        location.hash = "#" + active.split("section-")[1];
+    }
 }
 
 
+
+/*
 function generateNavigation() {
     const projects = document.querySelectorAll(".project");
     const navContainer = document.createElement("nav");
@@ -156,4 +200,6 @@ function generateNavigation() {
 }
 
 //generateNavigation();
+*/
+
 window.onload = init;

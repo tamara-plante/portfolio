@@ -158,62 +158,15 @@ section.resume .content{
     margin: auto;
 }
 
+/*
+    About me
+*/
 #section-about-me {
     background-color: whitesmoke;
 }
 #section-about-me .fn-accent + h2{
     font-size: min(calc(18px + 1vw), 28px);
 }
-
-
-#section-projects {
-    color: white;
-    width: 100%;
-    /*height: 100%;*/
-    /*overflow-y: auto;
-    scroll-behavior: smooth;
-    scrollbar-color: var(--accent-color) transparent;
-    scrollbar-width: thin;*/
-    /*padding: var(--nav-height) 0;*/
-    scrollbar-color: var(--accent-color) transparent;
-    background-color: #211951;
-}
-#section-projects h2,
-#section-projects hr {
-    color: white;
-}
-#section-projects.active {
-    /*position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;*/
-    display: flex;
-    /*width: 100%;
-    height: 100vh;*/
-    /*padding: var(--nav-height) 0;*/
-    /*
-    overflow-y: hidden;
-    scroll-behavior: smooth;
-    scrollbar-color: var(--accent-color) transparent;
-    scrollbar-width: thin;*/
-}
-#section-projects .card {
-    border: 1px solid var(--accent-color)
-}
-#section-projects .card-title {
-    color: #41ffd3;/* #78ff9a;*/
-}
-#section-projects .card-link {
-    font-size: 1.5rem;
-    color: #ffd84a; /* #c1ffea;*/
-    margin-right: 10px;
-}
-#section-projects .badge {
-    font-weight: normal;
-    color: white;
-    background-color: #7e28ff !important;
-}
-
 
 #languages img {
     width: 35px;
@@ -248,16 +201,50 @@ section.resume .content{
 }
 
 
+/*
+    Projects
+*/
+#section-projects {
+    color: white;
+    width: 100%;
+    scrollbar-color: var(--accent-color) transparent;
+    background-color: #211951;
+    transition: height 1.5s ease-in-out;
+}
+#section-projects h2,
+#section-projects hr {
+    color: white;
+}
+#section-projects.active {
+    display: flex;
+}
+#section-projects .card {
+    border: 1px solid var(--accent-color)
+}
+#section-projects .card-title {
+    color: #41ffd3;/* #78ff9a;*/
+}
+#section-projects .card-link {
+    font-size: 1.5rem;
+    color: #ffd84a; /* #c1ffea;*/
+    margin-right: 10px;
+}
+#section-projects .badge {
+    font-weight: normal;
+    color: white;
+    background-color: #7e28ff !important;
+}
+
+
+/*
+    Skills
+*/
 .badge-group {
     opacity: 0;
     filter: blur(5px);
-    /*transition: all 1s;*/
-    /*transform: translateX(-100%);*/
 }
 .badge-group.show {
-    /*opacity: 1;*/
     filter: blur(0);
-    /*transform: translateX(0);*/
     animation: slide 0.5s ease forwards;
 }
 
@@ -313,7 +300,6 @@ section.resume .content{
     background-position: right bottom;
 }
 
-
 .footer {
     background-color: var(--base-color);
 }
@@ -325,6 +311,10 @@ section.resume .content{
     }
 }
 
+/*
+    Mobile only
+    xs, sm
+*/
 @media (max-width: 767px) {
     .hide { /* Special div hide for portfolio */
         display: none;
@@ -333,23 +323,23 @@ section.resume .content{
     #section-projects {
         display: none;
     }
+    #section-projects .content {
+        min-height: 500px;
+    }
 
     .badge-group.show {
         animation-delay: 200ms;
     }
 }
 
-
+/*
+    Screens > md
+*/
 @media (min-width: 768px) {
    
     main.resume {
         position: relative;
         height: 100%;
-        /*
-        overflow-y: auto;
-        scroll-behavior: smooth;
-        scrollbar-color: var(--base-color) transparent;
-        scrollbar-width: thin;*/
     }
 
     section.resume {
@@ -395,17 +385,15 @@ section.resume .content{
     
     #section-projects {
         padding: 50px 0;
-        /*overflow-y: auto;
-        scroll-behavior: smooth;
-        scrollbar-color: var(--accent-color) transparent;
-        scrollbar-width: thin;*/ 
         transition: transform 0.5s ease;
         transform: translate(-100%, 0);
-        /*z-index: 15;*/
     }
     #section-projects.active {
         transition: transform 0.5s ease;
         transform: translate(0, 0);
+    }
+    #section-projects .content {
+        min-height: 100%;
     }
 
     .badge-group:nth-child(1) {
