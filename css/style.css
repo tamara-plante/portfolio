@@ -120,10 +120,10 @@ h4 {
     font-size: 2em;
     line-height: 1.8em;
 }
-#main-nav .nav-link:hover,
-#main-nav .nav-link:active,
-.nav-link.active {
-    color: var(--accent-color);
+.nav-link:hover,
+.nav-link:active,
+.nav-link.active{
+    color: var(--accent-color) !important;
 }
 .anchor {
     scroll-margin-top: var(--nav-height);
@@ -150,10 +150,6 @@ aside .fn-accent { /* Tamara */
     overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-color: var(--base-color) transparent;
-    /*scroll-behavior: smooth;*/
-    /*scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;*/
-    /*scroll-margin: 80px;*/
 }
 /*main.resume {
     position: relative;

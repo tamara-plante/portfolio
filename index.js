@@ -4,7 +4,7 @@ let sectionSkills;
 let panelAside;
 let active = "section-about-me";
 
-let msnry;
+let isTriggeredMsnRy = false;
 
 window.onload = init;
 
@@ -16,8 +16,8 @@ function init()
     panelAside = document.querySelector("aside");
 
     // init Masonry
-    const grid = document.querySelector('.grid');
-    msnry = Masonry.data( grid );
+    //const grid = document.querySelector('.grid');
+    //msnry = Masonry.data( grid );
     /*imagesLoaded(grid, function() {
         msnry.layout();
     });*/
@@ -104,7 +104,7 @@ function contentHandler(section)
     
     newActive = section;
     // If we click on the same, reset to about me
-    if (active == newActive) {
+    if (active === newActive) {
         newActive = "section-about-me";
     }
     // Setup active on btn-portfolio and sections
@@ -117,7 +117,11 @@ function contentHandler(section)
 
     // Portfolio is special
     if (newActive == "section-projects") {
-        msnry.layout(); // Make sure the grid is correctly setup due to display: none.
+        // Make sure the grid is correctly setup due to display: none.
+        if (!isTriggeredMsnRy) {
+            const msnry = new Masonry(".grid");
+            msnry.layout();
+        }
         sectionSkills.classList.add("hide");
         sectionAboutMe.classList.add("hide");
         panelAside.classList.add("hide");
