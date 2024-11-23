@@ -87,7 +87,8 @@ h4 {
     font-size: 14px;
     color: #fff;
 }
-.btn:not(.btn-cv):hover {
+.btn:not(.btn-cv):hover,
+.btn:not(.btn-cv).active {
     background-color: #7e28ff;
 }
 
@@ -173,15 +174,15 @@ section.resume .content{
 
 
 #section-projects {
-    display: none;
     color: white;
     width: 100%;
-    height: 100%;
-    overflow-y: auto;
+    /*height: 100%;*/
+    /*overflow-y: auto;
     scroll-behavior: smooth;
     scrollbar-color: var(--accent-color) transparent;
-    scrollbar-width: thin;
-    padding: var(--nav-height) 0;
+    scrollbar-width: thin;*/
+    /*padding: var(--nav-height) 0;*/
+    scrollbar-color: var(--accent-color) transparent;
     background-color: #211951;
 }
 #section-projects h2,
@@ -215,7 +216,7 @@ section.resume .content{
     border: 1px solid var(--accent-color)
 }
 #section-projects .card-title {
-    color: #3AEDC2;/* #78ff9a;*/
+    color: #41ffd3;/* #78ff9a;*/
 }
 #section-projects .card-link {
     font-size: 1.5rem;
@@ -344,9 +345,6 @@ section.resume .content{
     background-color: var(--base-color);
 }
 
-.hide {
-    display: none;
-}
 
 
 @media(prefers-reduced-motion) {
@@ -355,12 +353,22 @@ section.resume .content{
     }
 }
 
+@media (max-width: 767px) {
+    .hide {
+        display: none;
+    }
+
+    #section-projects {
+        display: none;
+        /*height: 100vh;*/
+        /*z-index: 20;*/
+        /*height: 100%;*/
+    }
+}
+
 
 @media (min-width: 768px) {
-    .hide {
-        display: block;
-    }
-    
+   
     main.resume {
         position: relative;
         height: 100%;
@@ -380,11 +388,11 @@ section.resume .content{
         width: 100%;
         height: 100%;
         padding: 20px 0;
-        /*
+        
         overflow-y: auto;
         scroll-behavior: smooth;
         scrollbar-color: var(--base-color) transparent;
-        scrollbar-width: thin;*/
+        scrollbar-width: thin;
 
         transition: transform 0.5s ease;
         transform: translate(-100%, 0);
@@ -407,13 +415,18 @@ section.resume .content{
     #section-about-me .fn-accent + h2{
         font-size: min(calc(16px + 1vw), 28px);
     }
-    
-    #section-projects {
-        display: unset;
-    }
-
     #interests figure img {
         width: 50px;
         height: 50px;
+    }
+    
+    #section-projects {
+        padding: 50px 0;
+        /*overflow-y: auto;
+        scroll-behavior: smooth;
+        scrollbar-color: var(--accent-color) transparent;
+        scrollbar-width: thin;*/
+    }
+
     }
 }

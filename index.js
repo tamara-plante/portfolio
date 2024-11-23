@@ -1,7 +1,10 @@
 let sectionAboutMe;
 let sectionProjects;
 let sectionSkills;
+let panelAside;
 let active = "section-about-me";
+
+let msnry;
 
 window.onload = init;
 
@@ -10,27 +13,26 @@ function init()
     sectionAboutMe = document.getElementById("section-about-me");
     sectionProjects = document.getElementById("section-projects");
     sectionSkills = document.getElementById("section-skills");
-
+    panelAside = document.querySelector("aside");
 
     // init Masonry
+    const grid = document.querySelector('.grid');
+    msnry = Masonry.data( grid );
+    /*imagesLoaded(grid, function() {
+        msnry.layout();
+    });*/
+    /*
     Promise.all(Array.from(document.images)
     .filter(img => img.classList.contains("portfolio-img") && !img.complete)
     .map(img => new Promise(resolve => { img.onload = img.onerror = resolve;})))
     .then(() => {
         var msnry = new Masonry(".grid");
         msnry.layout();
-    });
+    });*/
 
-    // Setup offcanvas links
-    // For some reason, through data-bs-dismiss, anchor links scroll does not work.
-    const offcanvasEl = document.getElementById("main-nav");
-    var offcanvas = new bootstrap.Offcanvas(offcanvasEl);
+    // Setup display none on end of transitions
 
-    document.querySelectorAll("#main-nav .nav-link").forEach(el => {
-        el.addEventListener("click", () => {
-            return offcanvas.toggle();
-        })
-    });
+
 
     const badgeGroups = document.querySelectorAll(".badge-group");
     const observer = new IntersectionObserver(entries => {
@@ -55,37 +57,75 @@ function init()
             document.getElementById("projects-container").classList.remove("hide");
         })
     });*/
+
+    // Setup offcanvas links
+    // For some reason, through data-bs-dismiss, anchor links scroll does not work.
+    const offcanvasEl = document.getElementById("main-nav");
+    var offcanvas = new bootstrap.Offcanvas(offcanvasEl);
+
     document.querySelectorAll(".btn-portfolio").forEach(el => {
+
+        if (el.classList.contains("nav-link")) {
+            el.addEventListener("click", () => {
+                return offcanvas.toggle();
+            });
+        }
+
         el.addEventListener("click", () => {
             /*if (active == "section-projects") {
                 sectionProjects.style.display = "none";
             }*/
-            document.getElementById(active).classList.remove("active");
-            newActive = el.dataset.section;
-
-            if (active == newActive) {
-                newActive = "section-about-me";
-            }
-
-            switch(newActive) {
-                case "section-skills":
-                    sectionSkills.classList.add("active");
-                    active = "section-skills";
-                    break;
-                case "section-projects":
-                    //sectionProjects.style.display = "block";
-                    sectionProjects.classList.add("active");
-                    /*sectionSkills.classList.add("hide");
-                    sectionAboutMe.classList.add("hide");*/
-                    active = "section-projects";
-                    break;
-                default:
-                    sectionAboutMe.classList.add("active");
-                    active = "section-about-me";
-                    break;
-            }
+            contentHandler(el.dataset.section);
         });
     });
+}
+
+/**
+ * Ensures proper display showing.
+ * @param {string} section the section to show
+ */
+function contentHandler(section) 
+{
+    document.getElementById(active).classList.remove("active");
+    // .hide only triggers for mobile
+    // Portfolio is special...
+    if (active == "section-projects") {
+        panelAside.classList.remove("hide");
+        sectionAboutMe.classList.remove("hide");
+        sectionSkills.classList.remove("hide");
+    }
+    // Reset active btn-portfolio
+    document.querySelectorAll(`[data-section="${active}"]`).forEach(el => {
+        el.classList.remove("active");
+        if (el.classList.contains("nav-link")) {
+            el.removeAttribute("aria-current");
+        }
+    });
+    
+    newActive = section;
+    // If we click on the same, reset to about me
+    if (active == newActive) {
+        newActive = "section-about-me";
+    }
+    // Setup active on btn-portfolio and sections
+    document.querySelectorAll(`[data-section="${newActive}"]`).forEach(el => {
+        el.classList.add("active");
+        if (el.classList.contains("nav-link")) {
+            el.setAttribute("aria-current", "page");
+        }
+    });
+
+    // Portfolio is special
+    if (newActive == "section-projects") {
+        msnry.layout(); // Make sure the grid is correctly setup due to display: none.
+        sectionSkills.classList.add("hide");
+        sectionAboutMe.classList.add("hide");
+        panelAside.classList.add("hide");
+        location.href = "#projects";
+        document.querySelector(".row.resume").scrollTop = 0;
+    }
+
+    active = newActive;
 }
 
 
