@@ -6,8 +6,6 @@ let active = "section-about-me";
 
 let isTriggeredMsnRy = false;
 
-window.onload = init;
-
 function init() 
 {
     sectionAboutMe = document.getElementById("section-about-me");
@@ -58,6 +56,10 @@ function init()
             contentHandler(el.dataset.section);
         });
     });
+
+    if (["#projects", "#about-me", "#skills"].includes(location.hash)) {
+        contentHandler("section-" + location.hash.split("#")[1]);
+    }
 }
 
 /**
@@ -105,11 +107,11 @@ function contentHandler(section)
         sectionSkills.classList.add("hide");
         sectionAboutMe.classList.add("hide");
         panelAside.classList.add("hide");
-        location.href = "#projects";
         document.querySelector(".row.resume").scrollTop = 0;
     }
 
     active = newActive;
+    location.hash = "#" + active.split("section-")[1];
 }
 
 
@@ -154,3 +156,4 @@ function generateNavigation() {
 }
 
 //generateNavigation();
+window.onload = init;
