@@ -5,6 +5,15 @@ let active = "section-about-me";
 
 function init() {
 
+    // init Masonry
+    Promise.all(Array.from(document.images)
+    .filter(img => img.classList.contains("portfolio-img") && !img.complete)
+    .map(img => new Promise(resolve => { img.onload = img.onerror = resolve;})))
+    .then(() => {
+        var msnry = new Masonry(".grid");
+        msnry.layout();
+    });
+
     // Setup offcanvas links
     // For some reason, through data-bs-dismiss, anchor links scroll does not work.
     const offcanvasEl = document.getElementById("main-nav");
