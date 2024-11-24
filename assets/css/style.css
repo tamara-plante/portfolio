@@ -226,7 +226,7 @@ section.resume .content{
     color: #41ffd3;/* #78ff9a;*/
 }
 #section-projects .card-link {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #ffd84a; /* #c1ffea;*/
     margin-right: 10px;
 }
@@ -442,7 +442,7 @@ section.resume .content{
 
     #section-projects {
         padding: 50px 0;
-        scroll-behavior: auto;
+        /*scroll-behavior: auto;*/
         transition: transform 0.5s ease;
         transform: translate(-100%, 0);
     }
@@ -454,15 +454,35 @@ section.resume .content{
         min-height: 100%;
     }
     #section-projects input {
-        max-width: 32%;
+        width: 25vw;
     }
-    /*
-    #section-projects #projects-top {
+    #section-projects .card-link {
+        font-size: 1.5rem;
+    }
+    
+    #projects-top {
         position: fixed;
         bottom: 50px;
-        right: 50px;
-        font-size: 2.5rem;
-    }*/
+        right: 2vw;
+        font-size: 2.8rem;
+        color: rgba(179, 221, 255, 0.651);
+    }
+    #projects-top > div {
+        border-radius: 50%;
+        background-color: rgba(179, 221, 255, 0.651);
+        width: 5vh;
+        height: 5vh;
+        transition: background-color 0.2s linear;
+    }
+    #projects-top:hover > div {
+        background-color: rgba(179, 221, 255, 0.87);
+    }
+    #projects-top svg {
+        width: 2.5vh;
+        height: 2.5vh;
+        stroke-width: 0.1rem;
+        stroke: #211951;
+    }
 
     .badge-group:nth-child(1) {
         animation-delay: 200ms;
