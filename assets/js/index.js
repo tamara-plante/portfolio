@@ -93,7 +93,6 @@ function init()
         focused.forEach(entry => {
             entry.target.classList.add("show");
         })
-
     }, { threshold: 0.5 });
     badgeGroups.forEach(group => observer.observe(group));
 
@@ -102,6 +101,7 @@ function init()
     const offcanvasEl = document.getElementById("main-nav");
     var offcanvas = new bootstrap.Offcanvas(offcanvasEl);
     document.querySelectorAll(".btn-portfolio").forEach(el => {
+
         if (el.classList.contains("nav-link")) {
             el.addEventListener("click", () => {
                 return offcanvas.toggle();
@@ -116,12 +116,14 @@ function init()
     // Search feature, including reset
     const search = document.getElementById("search");
     search.addEventListener("keyup", debounce(function() {
+
         if (isOldQuote) {
             handleQuotes();
         }
         qsRegex = new RegExp( this.value, "gi");
         iso.arrange();
     }, 200));
+
     search.addEventListener("search", function() {
         qsRegex = new RegExp( "", "gi");
         iso.arrange();
@@ -193,7 +195,12 @@ function contentHandler(section)
         sectionSkills.classList.add("hide");
         sectionAboutMe.classList.add("hide");
         panelAside.classList.add("hide");
-        document.querySelector(".row.resume").scrollTop = 0;
+        // Scroll to the top instantly.
+        location.hash = "#projects";
+        document.querySelector(".row.resume").scrollTo({
+            top: 0,
+            behavior: 'instant',
+        });
     }
 
     active = newActive;

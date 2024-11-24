@@ -442,6 +442,7 @@ section.resume .content{
 
     #section-projects {
         padding: 50px 0;
+        scroll-behavior: auto;
         transition: transform 0.5s ease;
         transform: translate(-100%, 0);
     }
