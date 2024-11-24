@@ -208,7 +208,7 @@ function handleQuotes()
 {   
     // No quotes!
     if (quotes.length === 0) {
-        fetch("https://zenquotes.io/api/quotes")
+        fetch("https://programming-quotesapi.vercel.app/api/bulk")
         .then(response => response.json())
         .then(json => {
             quotes = json;
@@ -222,8 +222,8 @@ function handleQuotes()
         const author = document.querySelector(".no-results figcaption");
         const newQuote = quotes.shift();
 
-        blockquote.innerText = newQuote.q;
-        author.innerText = newQuote.a
+        blockquote.innerText = newQuote.quote;
+        author.innerText = newQuote.author;
         isOldQuote = false;
     }
 }

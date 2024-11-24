@@ -21,7 +21,7 @@
 }
 
 .color2 {
-    background-color: blueviolet;
+    background-color: #7e28ff;
 }
 
 .color3 {
@@ -81,7 +81,7 @@ h4 {
 }
 
 .btn:not(.btn-cv) { /* Any buttons */
-    background-color: #5405C7;
+    background-color: var(--accent-color);
     font-family: var(--sans-serif);
     font-weight: 700;
     font-size: 14px;
@@ -232,7 +232,7 @@ section.resume .content{
 #section-projects .badge {
     font-weight: normal;
     color: white;
-    background-color: #7e28ff !important;
+    background-color: var(--accent-color) !important;
 }
 #section-projects input {
     border: 2px solid #7e28ff;
@@ -256,9 +256,6 @@ section.resume .content{
 }
 #section-projects .no-results.active {
     display: flex;
-}
-#section-projects .no-results .card div:first-child {
-    background-color: #7e28ff;
 }
 .no-results h3 + p {
     font-size: 1.2rem;
