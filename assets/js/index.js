@@ -177,6 +177,7 @@ function contentHandler(section)
         el.classList.remove("active");
         if (el.classList.contains("nav-link")) {
             el.removeAttribute("aria-current");
+            el.classList.remove("disabled");
         }
     });
     
@@ -190,6 +191,7 @@ function contentHandler(section)
         el.classList.add("active");
         if (el.classList.contains("nav-link")) {
             el.setAttribute("aria-current", "page");
+            el.classList.add("disabled");
         }
     });
 
