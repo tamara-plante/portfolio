@@ -14,6 +14,8 @@ let quotes = [];
 
 function init() 
 {
+    history.pushState(null, null, "");
+
     sectionAboutMe = document.getElementById("section-about-me");
     sectionProjects = document.getElementById("section-projects");
     sectionProjectsArrow = document.getElementById("projects-top");
@@ -201,7 +203,7 @@ function contentHandler(section)
         sectionProjectsArrow.classList.add("active");
 
         // Scroll to the top instantly.
-        location.hash = "#projects";
+        history.replaceState(null, null, "#projects");
         document.querySelector(".row.resume").scrollTo({
             top: 0,
             behavior: "instant"
@@ -212,8 +214,9 @@ function contentHandler(section)
         })
     }
 
+    //history.replaceState(undefined, undefined, location.hash)
     if (newActive === "section-about-me" && active === "section-projects") {
-        location.hash = "#top";
+        history.replaceState(null, null, "#top");
         document.querySelector(".row.resume").scrollTo({
             top: 0,
             behavior: "instant"
@@ -224,11 +227,12 @@ function contentHandler(section)
         })
     }
     else if (newActive === "section-about-me") {
-        location.hash = "#about-me";
+        history.replaceState(null, null, "#about-me");
     }
     else {
-        location.hash = "#" + newActive.split("section-")[1];
+        history.replaceState(null, null, "#" + newActive.split("section-")[1]);
     }
+
     active = newActive;
 }
 
