@@ -164,7 +164,7 @@ function contentHandler(section)
     // .hide only triggers for mobile
     // Portfolio is special...
     if (active == "section-projects") {
-        sectionProjectsArrow.classList.remove("d-md-block");
+        sectionProjectsArrow.classList.remove("active");
         panelAside.classList.remove("hide");
         sectionAboutMe.classList.remove("hide");
         sectionSkills.classList.remove("hide");
@@ -198,7 +198,7 @@ function contentHandler(section)
         sectionSkills.classList.add("hide");
         sectionAboutMe.classList.add("hide");
         panelAside.classList.add("hide");
-        sectionProjectsArrow.classList.add("d-md-block");
+        sectionProjectsArrow.classList.add("active");
 
         // Scroll to the top instantly.
         location.hash = "#projects";
@@ -212,13 +212,24 @@ function contentHandler(section)
         })
     }
 
-    active = newActive;
-    if (active === "section-about-me") {
-        location.hash = "";
+    if (newActive === "section-about-me" && active === "section-projects") {
+        location.hash = "#top";
+        document.querySelector(".row.resume").scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+        sectionProjects.scrollTo({
+            top: 0,
+            behavior: "instant"
+        })
+    }
+    else if (newActive === "section-about-me") {
+        location.hash = "#about-me";
     }
     else {
-        location.hash = "#" + active.split("section-")[1];
+        location.hash = "#" + newActive.split("section-")[1];
     }
+    active = newActive;
 }
 
 // debounce so filtering doesn't happen every millisecond

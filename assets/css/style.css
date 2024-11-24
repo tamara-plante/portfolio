@@ -335,9 +335,11 @@ section.resume .content{
 #badge-others .badge {
     font-size: 0.9rem;
     background-color: #211951;
+    transition: background-color 0.5s ease;
 }
 #badge-others .badge.active {
     background-color: var(--bright-accent-color);
+    transition: background-color 0.5s ease;
 }
 .badge {
     font-size: 0.8rem;
@@ -463,10 +465,18 @@ section.resume .content{
     
     #projects-top {
         position: fixed;
-        bottom: 50px;
-        right: 2vw;
+        bottom: -5vh;
+        right: 2.3vw;
+        overflow: hidden;
         font-size: 2.8rem;
         color: rgba(179, 221, 255, 0.651);
+        opacity: 0;
+        transition: bottom 0.1s linear, opacity 0.1s linear;
+    }
+    #projects-top.active {
+        opacity: 1;
+        bottom: 50px;
+        transition: bottom 0.4s linear, opacity 0.4s linear;
     }
     #projects-top > div {
         border-radius: 50%;
