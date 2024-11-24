@@ -180,9 +180,9 @@ function importProjects(jsonData)
             return;
         }
 
-        msnry.appended( div );
+        //msnry.appended( div );
     });
 
-    msnry.reloadItems()
-    msnry.layout();
+    //msnry.reloadItems()
+    //msnry.layout();
 }

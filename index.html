@@ -183,17 +183,39 @@
                 
                 <section id="section-projects" data-section="section-projects" class="resume" data-label="Portfolio">
                     <div id="projects" class="anchor"></div>
+                    <!--<div id="projects-top" class="d-none d-md-block"><i class="bi bi-arrow-up-circle-fill"></i></div>-->
                     
                     <div class="content col-10 col-md-9">
-                        <div class="d-flex align-items-center">
-                            <h2>Projects</h2>
-                            <div class="spinner-grow ms-2" style="width: 2rem; height: 2rem;" role="status">
-                                <span class="visually-hidden">Loading...</span>
+                        <div class="d-flex flex-column flex-md-row align-items-left justify-content-between">
+                            <div class="d-flex flex-row">
+                                <h2>Projects</h2>
+                                <div class="spinner-grow ms-3" style="width: 2rem; height: 2rem;" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
                             </div>
+                            <input id="search" class="form-control text-bg-dark" type="search" placeholder="Search JavaScript..." aria-label="Search" name="query" autocomplete="off">
                         </div>
                         <hr class="mb-2">
-
-                        <div class="grid row g-4 mb-5" data-masonry='{"percentPosition": true, "itemSelector": ".grid-item"}' ></div>
+                        <div class="col-12 col-lg-8 flex-column align-items-center justify-content-center mx-auto my-3 p-md-3 no-results">
+                            <h3>No results found.</h3>
+                            <p>...but here's a random quote.</p>
+                            <div class="card rounded">
+                                <div class="card-body">
+                                    <figure>
+                                        <blockquote class="blockquote text-white fw-bold">
+                                            <p>Actions are the seeds of fate. Deeds grow into destiny.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer text-white fst-italic">
+                                            Harry S. Truman
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="card-footer text-bg-dark">
+                                    Inspirational quotes provided by <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid row g-4 mb-5" data-isotope='{ "percentPosition": true, "itemSelector": ".grid-item", "layoutMode": "masonry" }'></div>
                         <div class="row">
                             <h2>Relevant Work</h2>
                             <section>
@@ -222,8 +244,9 @@
     
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>-->
     <!--<script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/dist/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
     <script src="assets/js/importer.js"></script>
     <script src="assets/js/index.js"></script>
 </body>

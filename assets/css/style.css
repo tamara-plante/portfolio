@@ -234,6 +234,44 @@ section.resume .content{
     color: white;
     background-color: #7e28ff !important;
 }
+#section-projects input {
+    border: 2px solid #7e28ff;
+    height: 3rem;
+}
+#section-projects input:focus {
+    border: 2px solid var(--bright-color);
+}
+#section-projects input::placeholder {
+    color: var(--light-color);
+    font-style: italic;
+}
+#section-projects input::-webkit-search-cancel-button {
+    filter: invert(100%);
+    color: var(--bright-color);
+}
+#section-projects .no-results {
+    display: none;
+    color: #7e28ff;
+    font-size: 1.5rem;
+}
+#section-projects .no-results.active {
+    display: flex;
+}
+#section-projects .no-results .card div:first-child {
+    background-color: #7e28ff;
+}
+.no-results h3 + p {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.no-results .card,
+.no-results .card-footer a {
+    color: white;
+}
+.no-results .card-footer {
+    text-align: center;
+    font-size: 0.9rem;
+}
 
 
 /*
@@ -382,7 +420,7 @@ section.resume .content{
         width: 50px;
         height: 50px;
     }
-    
+
     #section-projects {
         padding: 50px 0;
         transition: transform 0.5s ease;
@@ -395,6 +433,16 @@ section.resume .content{
     #section-projects .content {
         min-height: 100%;
     }
+    #section-projects input {
+        max-width: 32%;
+    }
+    /*
+    #section-projects #projects-top {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        font-size: 2.5rem;
+    }*/
 
     .badge-group:nth-child(1) {
         animation-delay: 200ms;

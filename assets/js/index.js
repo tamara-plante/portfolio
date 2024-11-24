@@ -6,7 +6,10 @@ let active = "section-about-me";
 
 let gridProjects;
 let gridProjectsSpinner;
-let msnry;
+let iso;
+let qsRegex;
+let isOldQuote = true;
+let quotes = [];
 
 function init() 
 {
@@ -18,7 +21,8 @@ function init()
     // init Masonry
     gridProjects = document.querySelector("#section-projects .grid");
     gridProjectsSpinner = document.querySelector("#section-projects .spinner-grow");
-    msnry = new Masonry(gridProjects);
+    //msnry = new Masonry(gridProjects);
+    iso = new Isotope(gridProjects);
     /*
     const grid = document.querySelector('.grid');
     msnry = Masonry.data( grid );
@@ -44,12 +48,29 @@ function init()
     fetch("assets/projects.json")
     .then(response => response.json())
     .then(json => importProjects(json))
+    .then(() => {
+        // Only create after elements are added to our grid.
+        iso = new Isotope(gridProjects, {
+            filter: function(itemElem) {
+                return qsRegex ? itemElem.textContent.match(qsRegex) : true;
+            }
+        });
+        iso.on("arrangeComplete", function(filteredItems) {
+            const noResults = document.querySelector("#section-projects .no-results");
+            if (filteredItems.length === 0) {
+                noResults.classList.add("active");
+                isOldQuote = true;
+            }
+            else {
+                noResults.classList.remove("active");
+            }
+        });
+    })
     .catch(error => console.log("Unable to load projects.json\n" + error));
     
-
+    // Skills observer to show animations
     const badgeGroups = document.querySelectorAll(".badge-group");
     const observer = new IntersectionObserver(entries => {
-        
         const focused = entries.filter(entry => entry.isIntersecting);
         focused.forEach(entry => {
             entry.target.classList.add("show");
@@ -62,9 +83,7 @@ function init()
     // For some reason, through data-bs-dismiss, anchor links scroll does not work.
     const offcanvasEl = document.getElementById("main-nav");
     var offcanvas = new bootstrap.Offcanvas(offcanvasEl);
-
     document.querySelectorAll(".btn-portfolio").forEach(el => {
-
         if (el.classList.contains("nav-link")) {
             el.addEventListener("click", () => {
                 return offcanvas.toggle();
@@ -76,6 +95,23 @@ function init()
         });
     });
 
+    // Search feature, including reset
+    const search = document.getElementById("search");
+    search.addEventListener("keyup", debounce(function() {
+
+        if (isOldQuote) {
+            handleQuotes();
+        }
+
+        qsRegex = new RegExp( this.value, "gi");
+        iso.arrange();
+    }, 200));
+    search.addEventListener("search", function() {
+        qsRegex = new RegExp( "", "gi");
+        iso.arrange();
+    })
+
+
     if (["#projects", "#about-me", "#skills"].includes(location.hash)) {
 
         // Add a delay to allow Masonry the time to load the grid fully.
@@ -85,7 +121,7 @@ function init()
             setTimeout(function() {
                 gridProjects.style.display = "block";
                 gridProjectsSpinner.style.display = "none";
-                msnry.layout();
+                iso.layout();
             }, 1000);
         }
         else {
@@ -136,10 +172,7 @@ function contentHandler(section)
     // Portfolio is special
     if (newActive == "section-projects") {
         // Make sure the grid is correctly setup due to display: none.
-        
-        //const msnry = new Masonry(".grid");
-        msnry.layout();
-        //msnry.reloadItems();
+        iso.layout();
 
         sectionSkills.classList.add("hide");
         sectionAboutMe.classList.add("hide");
@@ -155,6 +188,46 @@ function contentHandler(section)
         location.hash = "#" + active.split("section-")[1];
     }
 }
+
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+    var timeout;
+    threshold = threshold || 100;
+    return function debounced() {
+      clearTimeout( timeout );
+      var args = arguments;
+      var _this = this;
+      function delayed() {
+        fn.apply( _this, args );
+      }
+      timeout = setTimeout( delayed, threshold );
+    };
+}
+
+function handleQuotes() 
+{   
+    // No quotes!
+    if (quotes.length === 0) {
+        fetch("https://zenquotes.io/api/quotes")
+        .then(response => response.json())
+        .then(json => {
+            quotes = json;
+        })
+        .catch(error => console.log("Unable to retrieve quote...\n" + error))
+    }
+
+    if (quotes.length > 0) {
+        // Setup the quote
+        const blockquote = document.querySelector(".no-results blockquote p");
+        const author = document.querySelector(".no-results figcaption");
+        const newQuote = quotes.shift();
+
+        blockquote.innerText = newQuote.q;
+        author.innerText = newQuote.a
+        isOldQuote = false;
+    }
+}
+
 
 
 
