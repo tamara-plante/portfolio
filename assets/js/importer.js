@@ -21,8 +21,8 @@ function importSkills(jsonData)
                 const span = document.createElement("span");
                 parent.appendChild(span);
 
-                span.classList.add("badge", "text-bg-dark")
-                span.innerText = el;
+                span.classList.add("badge", "text-white", el.type);
+                span.innerText = el.label;
             });
         }
         else {

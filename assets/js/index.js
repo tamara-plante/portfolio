@@ -65,6 +65,24 @@ function init()
                 noResults.classList.remove("active");
             }
         });
+
+        const skillBadges = document.querySelectorAll("#badge-others span.badge");
+        const selectBadges = document.querySelectorAll(".badge-select");
+        selectBadges.forEach(el => {
+            el.addEventListener("click", function() {
+                skillBadges.forEach(badge => {
+                    if (badge.classList.contains(el.dataset.filter)) {
+                        badge.classList.add("active");
+                    }
+                    else {
+                        badge.classList.remove("active");
+                    }
+                });
+                selectBadges.forEach(select => select.classList.remove("active"));
+                el.classList.add("active");
+            });
+        });
+        document.querySelector(`.badge-select[data-filter="cloud"]`).click() // default
     })
     .catch(error => console.log("Unable to load projects.json\n" + error));
     
@@ -98,11 +116,9 @@ function init()
     // Search feature, including reset
     const search = document.getElementById("search");
     search.addEventListener("keyup", debounce(function() {
-
         if (isOldQuote) {
             handleQuotes();
         }
-
         qsRegex = new RegExp( this.value, "gi");
         iso.arrange();
     }, 200));

@@ -17,6 +17,10 @@
             "img": "material-ui-svgrepo-com.svg"
         },
         {
+            "label": "jQuery",
+            "img": "jquery-svgrepo-com.svg"
+        },
+        {
             "label": "HTML5",
             "img": "html-5-svgrepo-com.svg"
         },
@@ -70,18 +74,113 @@
         }
     ],
     "others": [
-        "Axios",
-        "Ajax",
-        "phpMyAdmin",
-        "Visual Studio Code",
-        "IntelliJ IDEA",
-        "Eclipse",
-        "Postman",
-        "JUnit",
-        "Jest",
-        "Sequelize",
-        "JPA",
-        "JDBC",
-        "Workbench"
+        {
+            "type": "ide",
+            "label": "Visual Studio"
+        },
+        {
+            "type": "cloud",
+            "label": "Azure"
+        },
+        {
+            "type": "interface",
+            "label": "WPF"
+        },
+        {
+            "type": "tool",
+            "label": "Maven"
+        },
+        {
+            "type": "cloud",
+            "label": "AWS S3"
+        },
+        {
+            "type": "cloud",
+            "label": "AWS RDS"
+        },
+        {
+            "type": "cloud",
+            "label": "AWS EC2"
+        },
+        {
+            "type": "interface",
+            "label": "Spring MVC"
+        },
+        {
+            "type": "interface",
+            "label": "Thymeleaf"
+        },
+        {
+            "type": "orm",
+            "label": "JPA"
+        },
+        {
+            "type": "tool",
+            "label": "Axios"
+        },
+        {
+            "type": "tool",
+            "label": "Ajax"
+        },
+        {
+            "type": "tool",
+            "label": "phpMyAdmin"
+        },
+        {
+            "type": "ide",
+            "label": "Visual Studio Code"
+        },
+        {
+            "type": "ide",
+            "label": "IntelliJ IDEA"
+        },
+        {
+            "type": "tool",
+            "label": "Postman"
+        },
+        {
+            "type": "test",
+            "label": "JUnit"
+        },
+        {
+            "type": "test",
+            "label": "Jest"
+        },
+        {
+            "type": "test",
+            "label": "SuperTest"
+        },
+        {
+            "type": "orm",
+            "label": "Sequelize"
+        },
+        {
+            "type": "tool",
+            "label": "Trello"
+        },
+        {
+            "type": "orm",
+            "label": "JDBC"
+        },
+        {
+            "type": "tool",
+            "label": "Figma"
+        },
+        {
+            "type": "tool",
+            "label": "Workbench"
+        },
+        {
+            "type": "tool",
+            "label": "GitHub"
+        },
+        {
+            "type": "ide",
+            "label": "Eclipse"
+        },
+        {
+            "type": "cloud",
+            "label": "AWS Lambda"
+        }
     ]
 }
