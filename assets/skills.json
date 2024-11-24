@@ -53,6 +53,10 @@
         {
             "label": "Express.js",
             "img": "express-svgrepo-com.svg"
+        },
+        {
+            "label": "RESTful APIs",
+            "img": "api-svgrepo-com.svg"
         }
     ],
     "databases": [
