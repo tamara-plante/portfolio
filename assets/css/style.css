@@ -198,7 +198,7 @@ section.resume .content{
     font-size: 24px;
 }
 .button-icon:hover {
-    color:#5405C7;
+    color: var(--accent-color);
 }
 
 
@@ -239,7 +239,8 @@ section.resume .content{
     border: 2px solid var(--bright-accent-color);
     height: 3rem;
 }
-#section-projects input:focus {
+#section-projects input:focus,
+#section-projects input:hover {
     border: 2px solid var(--bright-color);
 }
 #section-projects input::placeholder {
