@@ -146,6 +146,9 @@ aside .fn-accent { /* Tamara */
 /*
     Main
 */
+.row.resume {
+    overflow: hidden;
+}
 section.resume {
     padding: 20px 0;
 }
