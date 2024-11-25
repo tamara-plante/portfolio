@@ -147,7 +147,10 @@ aside .fn-accent { /* Tamara */
     Main
 */
 .row.resume {
-    overflow: hidden;
+    position: relative;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-color: var(--base-color) transparent;
 }
 section.resume {
     padding: 20px 0;
@@ -375,13 +378,6 @@ section.resume .content{
 @media (max-width: 767px) {
     .hide { /* Special div hide for portfolio */
         display: none;
-    }
-
-    .row.resume {
-        position: relative;
-        overflow-y: auto;
-        scroll-behavior: smooth;
-        scrollbar-color: var(--base-color) transparent;
     }
 
     #section-projects {
