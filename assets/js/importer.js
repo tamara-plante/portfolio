@@ -158,7 +158,7 @@ function importProjects(jsonData)
 
         }
         else if (el.type === "quote") {
-            classes(divCard, "card text-white color2 border-info");
+            classes(divCard, "card text-white color2");
 
             const main = cardBody();
             divCard.appendChild(main);

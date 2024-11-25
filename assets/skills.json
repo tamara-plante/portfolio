@@ -43,16 +43,24 @@
             "img": "python-svgrepo-com.svg"
         },
         {
-            "label": "php",
-            "img": "php-svgrepo-com.svg"
-        },
-        {
             "label": "Node.js",
             "img": "node-js-svgrepo-com.svg"
         },
         {
             "label": "Express.js",
             "img": "express-svgrepo-com.svg"
+        },
+        {
+            "label": "php",
+            "img": "php-svgrepo-com.svg"
+        },
+        {
+            "label": ".NET",
+            "img": "dot-net-svgrepo-com.svg"
+        },
+        {
+            "label": "C#",
+            "img": "c-sharp-svgrepo-com.svg"
         },
         {
             "label": "RESTful APIs",
