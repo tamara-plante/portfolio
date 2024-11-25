@@ -397,6 +397,9 @@ section.resume .content{
 */
 @media (min-width: 768px) {
    
+    aside {
+        height: 100%;
+    }
     main.resume {
         position: relative;
         height: 100%;
