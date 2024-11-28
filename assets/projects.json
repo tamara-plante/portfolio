@@ -6,17 +6,27 @@
             "img": "ticksy-cover.PNG",
             "desc": [
                 {
-                    "info": "[Upcoming Project]"
+                    "text": "Ticksy is an application to help manage productivity for projects. It keeps track of your progress on each task you set for yourself."
                 },
                 {
-                    "text": "Ticksy is an application to help manage productivity for projects."
+                    "text": "I was able to learn and implement the MVVM pattern (Model View View Model). I was also able to dive deeper into data binding in WPF, to update views with information from our View Models."
                 }
             ],
             "badges": [
                 "C# .NET",
                 "WPF",
-                "Azure"
-            ]
+                "Azure",
+                "MVVM",
+                "Material Design"
+            ],
+            "links": {
+                "github": [
+                    {
+                        "link": "https://github.com/hdcola/ticksy"
+                    }
+                ],
+                "presentation": "Ticksy-presentation.pdf"
+            }
         },
         {
             "type": "project",
