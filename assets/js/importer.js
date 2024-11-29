@@ -63,7 +63,7 @@ function importProjects(jsonData)
         const div = parent();
         projects.appendChild(div);
 
-        classes(div, "grid-item col-12 col-lg-6 col-xl-4");
+        classes(div, "grid-item col-12 col-lg-6");
 
         const divCard = parent();
         div.appendChild(divCard);
@@ -152,7 +152,7 @@ function importProjects(jsonData)
 
                     a.href = `assets/images/portfolio/${el.links.presentation}`;
                     a.title = "Presentation";
-                    a.innerHTML = `<i class="bi bi-info-circle"></i>`;
+                    a.innerHTML = `<i class="bi bi-filetype-pdf"></i>`;
                 }
             }
 
