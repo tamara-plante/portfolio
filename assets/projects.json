@@ -15,7 +15,7 @@
             "badges": [
                 "C# .NET",
                 "WPF",
-                "Azure",
+                "Azure SQL",
                 "MVVM",
                 "Material Design"
             ],
@@ -47,7 +47,7 @@
             "img": "logo-etsify.png",
             "desc": [
                 {
-                    "text": "This is an Etsy clone React.js and Node.js based project. I was able to further improve my unit testing skills using Jest and SuperTest and as a team, we reached 80% overall coverage. Some features included account creation, SPA item browsing, vendor-seller dynamic, payment using Stripe."
+                    "text": "This is an Etsy clone React and Node.js based project. I was able to further improve my unit testing skills using Jest and SuperTest and as a team, we reached 80% overall coverage. Some features included account creation, SPA item browsing, vendor-seller dynamic, payment using Stripe."
                 },
                 {
                     "text": "As the team leader, it was important to keep the team focused as we learned many new technologies in the process."

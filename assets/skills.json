@@ -92,7 +92,7 @@
         },
         {
             "type": "cloud",
-            "label": "Azure"
+            "label": "Azure SQL"
         },
         {
             "type": "interface",
