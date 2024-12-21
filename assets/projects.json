@@ -2,6 +2,65 @@
     "projects": [
         {
             "type": "project",
+            "label": "Upskillz | Online Course Marketplace",
+            "img": "upskillz-logo.png",
+            "desc": [
+                {
+                    "text": "Upskillz is an online course marketplace where users can enroll in courses and access lessons. They can also become instructors and write their own courses."
+                }
+            ],
+            "badges": [
+                "ASP.NET core",
+                "C#",
+                "Entity Framework core",
+                "Razor Pages",
+                "MVC",
+                "Azure SQL",
+                "Azure blob",
+                "Bootstrap"
+            ],
+            "links": {
+                "demo": "https://upskillz-gzcvddg2gwcwchcd.canadacentral-01.azurewebsites.net/",
+                "github": [
+                    {
+                        "link": "https://github.com/hdcola/UpSkillz2"
+                    }
+                ],
+                "presentation": "Upskillz-presentation.pdf"
+            }
+        },
+        {
+            "type": "quote",
+            "text": "I unlocked the knowledge to implement infinite scrolling in Vue."
+        },
+        {
+            "type": "project",
+            "label": "Code Bloc | Open-Source repository search hub",
+            "img": "code-bloc-cover.png",
+            "desc": [
+                {
+                    "text": "Code bloc is a place to give visibility to open-source projects by making them easily searchable."
+                }
+            ],
+            "badges": [
+                "Vue",
+                "TypeScript",
+                "Tailwind CSS",
+                "Daisy UI",
+                "GitHub API"
+            ],
+            "links": {
+                "demo": "https://tamara-plante.github.io/code-bloc/",
+                "github": [
+                    {
+                        "link": "https://github.com/tamara-plante/code-bloc"
+                    }
+                ],
+                "presentation": "Code-bloc-presentation.pdf"
+            }
+        },
+        {
+            "type": "project",
             "label": "Ticksy | Time-tracking Application",
             "img": "ticksy-cover.PNG",
             "desc": [
@@ -15,6 +74,7 @@
             "badges": [
                 "C# .NET",
                 "WPF",
+                "Entity Framework",
                 "Azure SQL",
                 "MVVM",
                 "Material Design"
@@ -27,19 +87,6 @@
                 ],
                 "presentation": "Ticksy-presentation.pdf"
             }
-        },
-        {
-            "type": "project",
-            "label": "Code Bloc | Open-Source issues finder",
-            "img": "code-bloc-cover.png",
-            "desc": [
-                {
-                    "info": "[Upcoming Project]"
-                },
-                {
-                    "text": "Code Bloc is a web application to search open-source projects on GitHub and bookmark them."
-                }
-            ]
         },
         {
             "type": "project",
