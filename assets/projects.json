@@ -2,6 +2,27 @@
     "projects": [
         {
             "type": "project",
+            "label": "Lexi AI | Language Learning Web App",
+            "img": "lexiai-cover.png",
+            "desc": [
+                {
+                    "info": "[Upcoming Project]"
+                },
+                {
+                    "text": "Lexi AI is a web application powered by Gemini to help you learn languages."
+                }
+            ],
+            "badges": [
+                "Vue 3",
+                "Tailwind CSS",
+                "MongoDB",
+                "Python",
+                "Django",
+                "Gemini"
+            ]
+        },
+        {
+            "type": "project",
             "label": "Upskillz | Online Course Marketplace",
             "img": "upskillz-logo.png",
             "desc": [
@@ -116,11 +137,11 @@
                 "demo": "https://etsify.hdcola.org/",
                 "github": [
                     {
-                        "label": "Github frontend",
+                        "label": "GitHub front-end",
                         "link": "https://github.com/hdcola/etsifyweb"
                     },
                     {
-                        "label": "GitHub backend",
+                        "label": "GitHub back-end",
                         "link": "https://github.com/hdcola/etsifyapi"
                     }
                 ],
