@@ -97,6 +97,10 @@
             "img": "microsoft-sql-server-logo-svgrepo-com.svg"
         },
         {
+            "label": "Azure SQL",
+            "img": "sql-database-sql-azure-svgrepo-com.svg"
+        },
+        {
             "label": "PostgreSQL",
             "img": "postgresql-svgrepo-com.svg"
         }
@@ -107,12 +111,12 @@
             "label": "Razor Pages"
         },
         {
-            "type": "ide",
-            "label": "Visual Studio"
+            "type": "orm",
+            "label": "Entity Framework"
         },
         {
-            "type": "cloud",
-            "label": "Azure SQL"
+            "type": "ide",
+            "label": "Visual Studio"
         },
         {
             "type": "interface",
